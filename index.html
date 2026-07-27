@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maximize Creative — Interior Design Studio, Kuala Lumpur</title>
+<meta name="description" content="Maximize Creative is an interior design and build studio working across residential, retail and workspace interiors in Kuala Lumpur and Selangor.">
+<meta property="og:title" content="Maximize Creative — Interior Design Studio">
+<meta property="og:description" content="Interiors designed and built for homes, retail and workspaces. Kuala Lumpur & Selangor.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maximize-creative.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#E7E5DF;
+  --paper:#F7F6F3;
+  --ink:#1A1E1B;
+  --verdigris:#41584A;
+  --brass:#A3855C;
+  --mute:#8B8881;
+  --line:rgba(26,30,27,.14);
+  --display:'Instrument Serif',Georgia,serif;
+  --body:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pad:clamp(20px,5vw,72px);
+  --gap:clamp(58px,9vw,134px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--verdigris);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.rule{height:1px;background:var(--line);border:0}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(14px);background:rgba(231,229,223,.8);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.stuck{border-bottom-color:var(--line)}
+.nav-in{max-width:1240px;margin:0 auto;padding:16px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.logo span{color:var(--verdigris)}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:14px;color:var(--mute);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:13px;padding:9px 20px;border:1px solid var(--ink);border-radius:999px;color:var(--ink)!important;transition:.25s}
+.nav-cta:hover{background:var(--ink);color:var(--paper)!important}
+@media(max-width:900px){.nav-links a:not(.nav-cta){display:none}}
+
+header{padding:clamp(128px,17vw,188px) 0 0}
+.hero-h1{font-family:var(--display);font-weight:400;font-size:clamp(44px,8.4vw,116px);line-height:.98;letter-spacing:-.02em;max-width:14ch;margin-top:22px}
+.hero-h1 em{font-style:italic;color:var(--verdigris)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline;justify-content:space-between;margin-top:clamp(32px,5vw,54px)}
+.hero-lede{max-width:44ch;color:#3B403C;font-size:clamp(15px,1.5vw,17px)}
+
+.strip{display:grid;grid-template-columns:repeat(6,1fr);height:clamp(118px,19vw,200px);margin-top:clamp(44px,6vw,72px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mat{position:relative;overflow:hidden}
+.mat::after{content:attr(data-name);position:absolute;left:10px;bottom:9px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);opacity:0;transform:translateY(6px);transition:.35s}
+.mat:hover::after{opacity:1;transform:none}
+.m1{background:linear-gradient(102deg,#B08D5E,#8D6B3E 42%,#C9A874 78%,#9A7947)}
+.m2{background:linear-gradient(180deg,#E3DDD1,#CFC7B6 60%,#DCD5C7);box-shadow:inset 0 0 60px rgba(150,138,116,.35)}
+.m3{background:linear-gradient(120deg,#41584A,#2C3D33 55%,#4E6B58)}
+.m4{background:linear-gradient(160deg,#C9C4BB,#A9A399 50%,#BDB7AD)}
+.m5{background:linear-gradient(135deg,#A3855C,#7E6440 48%,#B69A72)}
+.m6{background:linear-gradient(180deg,#242825,#141815 60%,#1E221F)}
+@media(max-width:700px){.strip{grid-template-columns:repeat(3,1fr);height:146px}}
+
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.stat{padding:clamp(30px,4.5vw,54px) 0 clamp(30px,4.5vw,54px) clamp(14px,2vw,28px);border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.02em}
+.stat span{display:block;margin-top:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);line-height:1.5}
+@media(max-width:700px){.ledger{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0;padding-left:0}.stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--line)}}
+
+section{padding:var(--gap) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:clamp(34px,5vw,58px)}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4.2vw,50px);line-height:1.08;letter-spacing:-.015em;max-width:18ch}
+
+.work{display:grid;gap:clamp(40px,6vw,92px)}
+.proj{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(22px,3.5vw,52px);align-items:end}
+.proj:nth-child(even){grid-template-columns:1fr 1.5fr}
+.proj:nth-child(even) .sheet{order:2}
+.sheet{background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+.sheet svg{display:block;width:100%;height:auto}
+.sheet .rev{position:absolute;top:0;right:0;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);background:var(--verdigris);padding:5px 11px}
+.proj-info h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.8vw,34px);line-height:1.1;margin:14px 0 10px}
+.proj-info p{color:#43483F;font-size:15px;max-width:38ch}
+.spec{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.spec div{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.spec b{display:block;font-family:var(--body);font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink);font-weight:500;margin-top:3px}
+@media(max-width:880px){.proj,.proj:nth-child(even){grid-template-columns:1fr}.proj:nth-child(even) .sheet{order:0}}
+
+.archive-band{background:var(--ink);color:var(--paper);padding:var(--gap) 0;overflow:hidden}
+.archive-band .eyebrow{color:rgba(247,246,243,.5)}
+.arch-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:36px}
+.arch-head h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.6vw,44px);letter-spacing:-.015em;color:var(--paper);margin-top:14px}
+.arch-note{font-family:var(--mono);font-size:11px;color:rgba(247,246,243,.45);letter-spacing:.1em;text-align:right;line-height:1.7}
+.arch-window{position:relative;height:clamp(300px,44vh,420px);overflow:hidden;border-top:1px solid rgba(247,246,243,.16);-webkit-mask-image:linear-gradient(180deg,transparent,#000 12%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 12%,#000 82%,transparent)}
+.arch-track{will-change:transform}
+.arch-track.run{animation:roll 34s linear infinite}
+.arch-window:hover .arch-track.run{animation-play-state:paused}
+@keyframes roll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.row{display:grid;grid-template-columns:70px 1fr 1.05fr 92px 78px;gap:18px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(247,246,243,.09);font-family:var(--mono);font-size:12px;color:rgba(247,246,243,.6)}
+.row .no{color:var(--brass)}
+.row .nm{font-family:var(--body);font-size:14.5px;color:var(--paper);letter-spacing:0}
+.row .yr{text-align:right}
+@media(max-width:760px){.row{grid-template-columns:54px 1fr 62px;font-size:11px}.row .loc,.row .sf{display:none}.arch-note{display:none}}
+
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cap{background:var(--stone);padding:clamp(24px,3vw,38px) clamp(16px,2vw,28px)}
+.cap .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--brass);text-transform:uppercase}
+.cap h4{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.1vw,25px);margin:14px 0 9px;line-height:1.15}
+.cap p{font-size:14px;color:#43483F}
+@media(max-width:880px){.caps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.caps{grid-template-columns:1fr}}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.step{background:var(--stone);padding:clamp(24px,3vw,38px) clamp(16px,2vw,28px)}
+.step .n{font-family:var(--mono);font-size:11px;color:var(--brass);letter-spacing:.14em}
+.step h4{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.2vw,26px);margin:16px 0 10px;line-height:1.15}
+.step p{font-size:14px;color:#43483F}
+.step .t{margin-top:18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+
+.cta{background:var(--paper);border-top:1px solid var(--line)}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
+.cta h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,5vw,62px);line-height:1.02;letter-spacing:-.02em;max-width:12ch;margin-top:20px}
+.cta h2 em{font-style:italic;color:var(--verdigris)}
+.cta .lede{margin-top:22px;max-width:36ch;color:#43483F}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;font-family:var(--body);font-size:15.5px;color:var(--ink);transition:border-color .25s}
+.field textarea{resize:vertical;min-height:74px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--verdigris)}
+.btn{margin-top:12px;width:100%;padding:16px 22px;background:var(--ink);color:var(--paper);border:0;border-radius:999px;font-family:var(--body);font-size:14.5px;font-weight:500;cursor:pointer;transition:.25s}
+.btn:hover{background:var(--verdigris)}
+.form-note{margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--mute);text-align:center}
+.sent{padding:26px 0;font-family:var(--mono);font-size:12px;color:var(--verdigris);letter-spacing:.06em}
+@media(max-width:840px){.cta-grid{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:rgba(247,246,243,.55);padding:clamp(44px,6vw,72px) 0 34px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px;padding-bottom:38px;border-bottom:1px solid rgba(247,246,243,.12)}
+.foot-grid h5{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,246,243,.4);margin-bottom:16px;font-weight:400}
+.foot-grid a{display:block;color:rgba(247,246,243,.72);margin-bottom:9px;transition:color .2s}
+.foot-grid a:hover{color:var(--paper)}
+.foot-mark{font-family:var(--display);font-size:clamp(26px,3.4vw,38px);color:var(--paper);line-height:1.1;max-width:16ch}
+.foot-bot{display:flex;justify-content:space-between;gap:20px;padding-top:24px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,246,243,.35)}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:30px}.foot-bot{flex-direction:column;gap:8px}}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:70;width:54px;height:54px;border-radius:50%;background:var(--verdigris);color:var(--paper);display:grid;place-items:center;box-shadow:0 10px 30px rgba(26,30,27,.28);transition:transform .25s}
+.wa:hover{transform:translateY(-3px)}
+
+.dw{fill:none;stroke:#1A1E1B;stroke-linecap:square}
+.w-heavy{stroke-width:2.2;opacity:.9}
+.w-mid{stroke-width:1.5;opacity:.62}
+.w-fine{stroke-width:1;opacity:.42}
+.w-hair{stroke-width:.8;opacity:.26}
+.fill-ink{fill:#1A1E1B;opacity:.86}
+.fill-paper{fill:#F7F6F3}
+.t-lab{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.13em;fill:#1A1E1B;opacity:.5}
+.t-dim{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;fill:#1A1E1B;opacity:.5}
+.t-tbk{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:.16em;fill:#1A1E1B;opacity:.42}
+.t-tbv{font-family:'Instrument Sans',sans-serif;font-size:11.5px;fill:#1A1E1B;opacity:.82}
+.t-key{font-family:'IBM Plex Mono',monospace;font-size:9.5px;fill:#1A1E1B;opacity:.62}
+.brass-s{stroke:#A3855C;opacity:.85;stroke-width:2.2;fill:none}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#top" class="logo">Maximize <span>Creative</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#archive">Archive</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="nav-cta">Start a project</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <p class="eyebrow reveal">Interior design &amp; build — Kuala Lumpur &amp; Selangor</p>
+    <h1 class="hero-h1 reveal">Rooms that hold up after you <em>move in</em>.</h1>
+    <div class="hero-meta reveal">
+      <p class="hero-lede">We design and build interiors for homes, retail and workspaces — drawn properly, costed honestly, and finished by the same team that measured the site.</p>
+      <p class="eyebrow" style="line-height:1.9">Est. 2018<br>74 projects delivered<br>Residential · Retail · Workspace</p>
+    </div>
+  </div>
+
+  <div class="strip reveal">
+    <div class="mat m1" data-name="White oak"></div>
+    <div class="mat m2" data-name="Travertine"></div>
+    <div class="mat m3" data-name="Verdigris lacquer"></div>
+    <div class="mat m4" data-name="Belgian linen"></div>
+    <div class="mat m5" data-name="Brushed brass"></div>
+    <div class="mat m6" data-name="Fumed ash"></div>
+  </div>
+
+  <div class="wrap">
+    <div class="ledger">
+      <div class="stat"><b>74</b><span>Projects<br>completed</span></div>
+      <div class="stat"><b>8</b><span>Years<br>in practice</span></div>
+      <div class="stat"><b>186K</b><span>Square feet<br>designed</span></div>
+      <div class="stat"><b>68%</b><span>Work from<br>past clients</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Selected work</h2>
+      <p class="eyebrow">Issued drawings — three of 74</p>
+    </div>
+    <div class="work">
+
+      <article class="proj reveal">
+        <div class="sheet">
+          <span class="rev">Rev C</span>
+          <svg viewBox="0 0 800 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Level 01 floor plan, duplex, Mont Kiara">
+            <defs>
+              <pattern id="grid1" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0H0V20" class="dw" stroke-width=".5" opacity=".08"/>
+              </pattern>
+            </defs>
+            <rect width="800" height="660" fill="#F7F6F3"/>
+            <rect width="800" height="660" fill="url(#grid1)"/>
+
+            <path d="M60,60 H740 V470 H60 Z M70,70 H730 V460 H70 Z" fill-rule="evenodd" class="fill-ink"/>
+            <g class="fill-ink">
+              <rect x="380" y="70" width="6" height="110"/><rect x="380" y="240" width="6" height="220"/>
+              <rect x="386" y="274" width="34" height="6"/><rect x="480" y="274" width="250" height="6"/>
+              <rect x="520" y="280" width="6" height="60"/><rect x="520" y="400" width="6" height="60"/>
+              <rect x="70" y="300" width="80" height="6"/><rect x="210" y="300" width="170" height="6"/>
+            </g>
+
+            <g class="fill-paper">
+              <rect x="59" y="350" width="12" height="60"/>
+              <rect x="160" y="59" width="160" height="12"/>
+              <rect x="729" y="120" width="12" height="120"/>
+              <rect x="150" y="459" width="130" height="12"/>
+            </g>
+            <g class="dw w-mid">
+              <path d="M160,63 H320 M160,67 H320"/>
+              <path d="M733,120 V240 M737,120 V240"/>
+              <path d="M150,463 H280 M150,467 H280"/>
+            </g>
+
+            <g class="dw w-fine">
+              <path d="M383,240 L443,240"/><path d="M443,240 A60,60 0 0 0 383,180"/>
+              <path d="M480,277 L480,337"/><path d="M480,337 A60,60 0 0 1 420,277"/>
+              <path d="M523,400 L583,400"/><path d="M583,400 A60,60 0 0 0 523,340"/>
+              <path d="M210,303 L210,243"/><path d="M210,243 A60,60 0 0 0 150,303"/>
+              <path d="M70,410 L130,410"/><path d="M130,410 A60,60 0 0 0 70,350"/>
+            </g>
+
+            <g class="dw w-mid">
+              <rect x="100" y="112" width="170" height="62" rx="3"/><path d="M100,128 H270"/>
+              <rect x="140" y="196" width="90" height="44" rx="2"/>
+              <rect x="322" y="120" width="46" height="130" rx="2"/>
+              <rect x="112" y="344" width="140" height="78" rx="3"/>
+              <rect x="96" y="356" width="12" height="24" rx="2"/><rect x="96" y="388" width="12" height="24" rx="2"/>
+              <rect x="256" y="356" width="12" height="24" rx="2"/><rect x="256" y="388" width="12" height="24" rx="2"/>
+              <rect x="150" y="328" width="24" height="12" rx="2"/><rect x="192" y="328" width="24" height="12" rx="2"/>
+              <path d="M280,430 H374 V460"/><rect x="284" y="434" width="86" height="22" rx="2"/>
+              <rect x="470" y="106" width="170" height="140" rx="3"/>
+              <rect x="482" y="114" width="68" height="26" rx="3"/><rect x="560" y="114" width="68" height="26" rx="3"/>
+              <rect x="438" y="106" width="26" height="34" rx="2"/><rect x="646" y="106" width="26" height="34" rx="2"/>
+              <rect x="688" y="106" width="36" height="150" rx="2"/><path d="M688,106 L724,142 M688,142 L724,178"/>
+              <rect x="396" y="320" width="60" height="34" rx="2"/><circle cx="426" cy="337" r="11"/>
+              <rect x="398" y="382" width="36" height="48" rx="15"/>
+              <rect x="458" y="376" width="54" height="76"/><path d="M458,376 L512,452"/><circle cx="485" cy="414" r="4"/>
+              <rect x="560" y="322" width="150" height="48" rx="2"/><circle cx="635" cy="392" r="17"/>
+              <rect x="694" y="400" width="28" height="56" rx="2"/>
+            </g>
+
+            <g class="t-lab">
+              <text x="84" y="92">LIVING · 34 m²</text>
+              <text x="84" y="328">DINING / KITCHEN</text>
+              <text x="400" y="92">PRIMARY BEDROOM</text>
+              <text x="396" y="302">BATH</text>
+              <text x="540" y="304">STUDY</text>
+            </g>
+
+            <g class="dw w-hair"><path d="M60,470 V532 M380,462 V532 M740,470 V532"/></g>
+            <g class="dw w-fine">
+              <path d="M60,515 H740"/>
+              <path d="M55,520 L65,510 M375,520 L385,510 M735,520 L745,510"/>
+            </g>
+            <g class="t-dim"><text x="200" y="508" text-anchor="middle">5 200</text><text x="560" y="508" text-anchor="middle">6 100</text></g>
+            <g class="dw w-fine"><path d="M60,548 H740 M55,553 L65,543 M735,553 L745,543"/></g>
+            <text class="t-dim" x="400" y="541" text-anchor="middle">11 300 OVERALL</text>
+
+            <circle cx="758" cy="96" r="15" class="dw w-fine"/>
+            <path d="M758,84 L763,99 L758,95 L753,99 Z" class="fill-ink"/>
+            <text class="t-dim" x="758" y="122" text-anchor="middle">N</text>
+
+            <g class="dw w-fine"><rect x="40" y="580" width="720" height="58"/><path d="M280,580 V638 M500,580 V638 M650,580 V638"/></g>
+            <text class="t-tbk" x="52" y="601">PRACTICE</text><text class="t-tbv" x="52" y="622">Maximize Creative</text>
+            <text class="t-tbk" x="292" y="601">PROJECT</text><text class="t-tbv" x="292" y="622">0074 · Duplex, Mont Kiara</text>
+            <text class="t-tbk" x="512" y="601">DRAWING</text><text class="t-tbv" x="512" y="622">A-101 Plan</text>
+            <text class="t-tbk" x="662" y="601">SCALE</text><text class="t-tbv" x="662" y="622">1:100 @ A3</text>
+          </svg>
+        </div>
+        <div class="proj-info">
+          <p class="eyebrow">No. 0074</p>
+          <h3>Duplex, Mont Kiara</h3>
+          <p>A 2,800 sq ft duplex stripped back to the shell. Travertine floors, one continuous oak spine wall, and a re-cut kitchen that finally faces the view.</p>
+          <div class="spec">
+            <div>Area<b>2,800 sq ft</b></div>
+            <div>Scope<b>Full renovation</b></div>
+            <div>Delivered<b>2026</b></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="sheet">
+          <span class="rev">Rev B</span>
+          <svg viewBox="0 0 800 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Axonometric of a workspace floor, Bangsar South">
+            <defs>
+              <pattern id="grid2" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0H0V20" class="dw" stroke-width=".5" opacity=".08"/>
+              </pattern>
+            </defs>
+            <rect width="800" height="660" fill="#F7F6F3"/>
+            <rect width="800" height="660" fill="url(#grid2)"/>
+
+            <polygon points="400,150 722,336 722,266 400,80" fill="#1A1E1B" opacity=".07"/>
+            <polygon points="400,150 174,280 174,210 400,80" fill="#1A1E1B" opacity=".12"/>
+            <g class="dw w-mid"><polygon points="400,150 722,336 722,266 400,80"/><polygon points="400,150 174,280 174,210 400,80"/></g>
+
+            <polygon points="400,150 722,336 497,466 174,280" fill="#1A1E1B" opacity=".025"/>
+            <g class="dw w-heavy"><polygon points="400,150 722,336 497,466 174,280"/></g>
+
+            <g transform="translate(400,150) matrix(0.5369,0.31,-0.5369,0.31,0,0)">
+              <g class="dw" stroke-width="2.6" opacity=".1">
+                <path d="M60,0 V420 M120,0 V420 M180,0 V420 M240,0 V420 M300,0 V420 M360,0 V420 M420,0 V420 M480,0 V420 M540,0 V420"/>
+                <path d="M0,60 H600 M0,120 H600 M0,180 H600 M0,240 H600 M0,300 H600 M0,360 H600"/>
+              </g>
+              <g class="dw" stroke-width="2.4" opacity=".55">
+                <rect x="50" y="50" width="88" height="48"/><rect x="142" y="50" width="88" height="48"/>
+                <rect x="50" y="102" width="88" height="48"/><rect x="142" y="102" width="88" height="48"/>
+                <rect x="50" y="154" width="88" height="48"/><rect x="142" y="154" width="88" height="48"/>
+                <rect x="330" y="50" width="88" height="48"/><rect x="422" y="50" width="88" height="48"/>
+                <rect x="330" y="102" width="88" height="48"/><rect x="422" y="102" width="88" height="48"/>
+                <rect x="330" y="154" width="88" height="48"/><rect x="422" y="154" width="88" height="48"/>
+                <rect x="50" y="240" width="88" height="48"/><rect x="142" y="240" width="88" height="48"/>
+                <rect x="50" y="292" width="88" height="48"/><rect x="142" y="292" width="88" height="48"/>
+                <rect x="330" y="240" width="88" height="48"/><rect x="422" y="240" width="88" height="48"/>
+                <rect x="330" y="292" width="88" height="48"/><rect x="422" y="292" width="88" height="48"/>
+              </g>
+              <g class="dw" stroke-width="3.4" opacity=".72">
+                <rect x="516" y="36" width="68" height="152"/><rect x="516" y="228" width="68" height="152"/>
+              </g>
+              <g class="dw" stroke-width="2.2" opacity=".3" stroke-dasharray="14 10"><path d="M280,10 V410"/></g>
+            </g>
+
+            <circle cx="416" cy="228" r="11" class="fill-paper"/><circle cx="416" cy="228" r="11" class="dw w-fine"/><text class="t-key" x="416" y="232" text-anchor="middle">01</text>
+            <circle cx="632" cy="358" r="11" class="fill-paper"/><circle cx="632" cy="358" r="11" class="dw w-fine"/><text class="t-key" x="632" y="362" text-anchor="middle">02</text>
+            <circle cx="438" cy="302" r="11" class="fill-paper"/><circle cx="438" cy="302" r="11" class="dw w-fine"/><text class="t-key" x="438" y="306" text-anchor="middle">03</text>
+
+            <g class="dw w-hair"><path d="M60,494 H380"/></g>
+            <g class="t-dim">
+              <text x="60" y="516">01   OPEN WORKSTATIONS — 20 NOS.</text>
+              <text x="60" y="536">02   MEETING ROOMS — 2 NOS.</text>
+              <text x="60" y="556">03   CIRCULATION SPINE — 1 800 MM</text>
+            </g>
+
+            <g class="dw w-fine"><rect x="40" y="580" width="720" height="58"/><path d="M280,580 V638 M500,580 V638 M650,580 V638"/></g>
+            <text class="t-tbk" x="52" y="601">PRACTICE</text><text class="t-tbv" x="52" y="622">Maximize Creative</text>
+            <text class="t-tbk" x="292" y="601">PROJECT</text><text class="t-tbv" x="292" y="622">0071 · Studio floor, Bangsar Sth</text>
+            <text class="t-tbk" x="512" y="601">DRAWING</text><text class="t-tbv" x="512" y="622">A-201 Axo</text>
+            <text class="t-tbk" x="662" y="601">SCALE</text><text class="t-tbv" x="662" y="622">1:150 @ A3</text>
+          </svg>
+        </div>
+        <div class="proj-info">
+          <p class="eyebrow">No. 0071</p>
+          <h3>Studio floor, Bangsar South</h3>
+          <p>Twenty desks without the call-centre feeling. Acoustic ceiling rafts, deep green joinery, and meeting rooms placed to break the sightlines.</p>
+          <div class="spec">
+            <div>Area<b>6,400 sq ft</b></div>
+            <div>Scope<b>Design &amp; build</b></div>
+            <div>Delivered<b>2025</b></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="sheet">
+          <span class="rev">Rev A</span>
+          <svg viewBox="0 0 800 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Internal elevation of a retail display wall, Pavilion KL">
+            <defs>
+              <pattern id="grid3" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M20 0H0V20" class="dw" stroke-width=".5" opacity=".08"/>
+              </pattern>
+              <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <path d="M0,0 V8" class="dw" stroke-width="1" opacity=".38"/>
+              </pattern>
+            </defs>
+            <rect width="800" height="660" fill="#F7F6F3"/>
+            <rect width="800" height="660" fill="url(#grid3)"/>
+
+            <rect x="60" y="110" width="22" height="360" fill="url(#hatch)"/>
+            <rect x="718" y="110" width="22" height="360" fill="url(#hatch)"/>
+            <g class="dw w-heavy"><rect x="60" y="110" width="22" height="360"/><rect x="718" y="110" width="22" height="360"/></g>
+
+            <g class="dw w-heavy"><path d="M60,110 H740 M60,470 H740"/></g>
+            <g class="dw w-hair"><path d="M82,124 H718"/></g>
+
+            <g class="dw w-mid">
+              <path d="M110,150 V470 M210,150 V470 M310,150 V470 M410,150 V470 M510,150 V470 M610,150 V470"/>
+              <path d="M110,150 H610"/>
+            </g>
+            <g class="brass-s"><path d="M110,212 H610 M110,272 H610 M110,332 H610 M110,392 H610"/></g>
+
+            <g class="dw w-mid"><rect x="638" y="380" width="74" height="90"/><path d="M638,392 H712"/></g>
+
+            <g class="dw w-fine">
+              <path d="M200,110 V196 M360,110 V184 M520,110 V196"/>
+              <path d="M180,196 H220 L214,214 H186 Z"/><path d="M340,184 H380 L374,202 H346 Z"/><path d="M500,196 H540 L534,214 H506 Z"/>
+            </g>
+
+            <g class="dw" stroke-width="1.4" opacity=".3" fill="none">
+              <circle cx="355" cy="264" r="10"/>
+              <path d="M355,274 V340 M355,290 L338,318 M355,290 L372,318 M355,340 L342,410 M355,340 L368,410"/>
+              <path d="M342,410 L336,414 M368,410 L374,414"/>
+            </g>
+
+            <circle cx="440" cy="272" r="11" class="fill-paper"/><circle cx="440" cy="272" r="11" class="dw w-fine"/><text class="t-key" x="440" y="276" text-anchor="middle">A</text>
+            <circle cx="260" cy="352" r="11" class="fill-paper"/><circle cx="260" cy="352" r="11" class="dw w-fine"/><text class="t-key" x="260" y="356" text-anchor="middle">B</text>
+            <circle cx="675" cy="424" r="11" class="fill-paper"/><circle cx="675" cy="424" r="11" class="dw w-fine"/><text class="t-key" x="675" y="428" text-anchor="middle">C</text>
+            <circle cx="360" cy="193" r="11" class="fill-paper"/><circle cx="360" cy="193" r="11" class="dw w-fine"/><text class="t-key" x="360" y="197" text-anchor="middle">D</text>
+
+            <g class="dw w-fine"><path d="M36,110 V470 M31,115 L41,105 M31,475 L41,465"/></g>
+            <text class="t-dim" x="24" y="298" text-anchor="middle" transform="rotate(-90 24 298)">2 800</text>
+
+            <g class="dw w-hair"><path d="M60,470 V504 M740,470 V504"/></g>
+            <g class="dw w-fine"><path d="M60,494 H740 M55,499 L65,489 M735,499 L745,489"/></g>
+            <text class="t-dim" x="400" y="487" text-anchor="middle">6 300 CLEAR</text>
+
+            <g class="t-dim">
+              <text x="60" y="534">A   BRUSHED BRASS SHELF EDGE, 3 MM</text>
+              <text x="60" y="554">B   FUMED ASH CARCASS, 18 MM</text>
+              <text x="420" y="534">C   TRAVERTINE COUNTER, 20 MM</text>
+              <text x="420" y="554">D   OPAL GLASS PENDANT, 300 Ø</text>
+            </g>
+
+            <g class="dw w-fine"><rect x="40" y="580" width="720" height="58"/><path d="M280,580 V638 M500,580 V638 M650,580 V638"/></g>
+            <text class="t-tbk" x="52" y="601">PRACTICE</text><text class="t-tbv" x="52" y="622">Maximize Creative</text>
+            <text class="t-tbk" x="292" y="601">PROJECT</text><text class="t-tbv" x="292" y="622">0068 · Flagship, Pavilion KL</text>
+            <text class="t-tbk" x="512" y="601">DRAWING</text><text class="t-tbv" x="512" y="622">A-301 Elevation</text>
+            <text class="t-tbk" x="662" y="601">SCALE</text><text class="t-tbv" x="662" y="622">1:50 @ A3</text>
+          </svg>
+        </div>
+        <div class="proj-info">
+          <p class="eyebrow">No. 0068</p>
+          <h3>Flagship store, Pavilion KL</h3>
+          <p>A retail fit-out built around one brass display run. Everything else stays quiet so the product carries the room. Handed over in nine weeks.</p>
+          <div class="spec">
+            <div>Area<b>1,150 sq ft</b></div>
+            <div>Scope<b>Fit-out</b></div>
+            <div>Delivered<b>2025</b></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="archive-band" id="archive">
+  <div class="wrap">
+    <div class="arch-head reveal">
+      <div>
+        <p class="eyebrow">Project archive</p>
+        <h2>Every project, since 2018.</h2>
+      </div>
+      <p class="arch-note">Scrolling live<br>Hover to pause</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="arch-window"><div class="arch-track" id="track"></div></div>
+  </div>
+</div>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What we handle in-house</h2>
+      <p class="eyebrow">No outsourced design · One accountable team</p>
+    </div>
+    <div class="caps reveal">
+      <div class="cap"><div class="k">Design</div><h4>Space planning</h4><p>Layouts drawn to scale and tested against how you actually move through the space — not copied from a showroom.</p></div>
+      <div class="cap"><div class="k">Design</div><h4>Lighting</h4><p>Circuit-by-circuit lighting plans. Layered, dimmable, and specified before the ceiling closes.</p></div>
+      <div class="cap"><div class="k">Design</div><h4>Material specification</h4><p>Physical samples on the table before anything is ordered. Every finish written into the schedule.</p></div>
+      <div class="cap"><div class="k">Build</div><h4>Custom joinery</h4><p>Wardrobes, kitchens and display runs built to our own shop drawings, not off-the-shelf carcasses.</p></div>
+      <div class="cap"><div class="k">Build</div><h4>M&amp;E coordination</h4><p>Electrical, plumbing and aircon routed on the drawing, so nothing gets chased into a wall twice.</p></div>
+      <div class="cap"><div class="k">Build</div><h4>Site supervision</h4><p>One supervisor per project, on site daily, photo updates every Friday, and a closed snag list at handover.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>How a project runs</h2>
+      <p class="eyebrow">Four stages · fixed fee at each</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step"><div class="n">01</div><h4>Site &amp; brief</h4><p>We measure the unit ourselves, photograph every wall, and write down what the space actually needs to do.</p><div class="t">Week 1</div></div>
+      <div class="step"><div class="n">02</div><h4>Design &amp; costing</h4><p>Layouts, 3D views and a line-by-line cost sheet. You approve the number before anything is ordered.</p><div class="t">Weeks 2–4</div></div>
+      <div class="step"><div class="n">03</div><h4>Build</h4><p>One site supervisor, one WhatsApp group, photo updates every Friday. No sub-contractor guessing games.</p><div class="t">Weeks 5–14</div></div>
+      <div class="step"><div class="n">04</div><h4>Handover</h4><p>Snag list closed before you get the keys back, plus a 12-month defect warranty in writing.</p><div class="t">Week 15</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div class="reveal">
+        <p class="eyebrow">Start a project</p>
+        <h2>Tell us about the <em>space</em>.</h2>
+        <p class="lede">Send the unit size and what you want it to become. We reply within one working day with an indicative range — no charge, no site visit needed yet.</p>
+        <div style="margin-top:34px">
+          <hr class="rule">
+          <div style="display:flex;flex-wrap:wrap;gap:26px 44px;padding-top:22px">
+            <div><p class="eyebrow">Area</p><p style="margin-top:6px;font-size:15px">Kuala Lumpur &amp; Selangor<br>By appointment</p></div>
+            <div><p class="eyebrow">Call / WhatsApp</p><p style="margin-top:6px;font-size:15px"><a href="tel:+601117673110">011-1767 3110</a><br><a href="mailto:maximizecreativemy@gmail.com">maximizecreativemy@gmail.com</a></p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form id="enq" novalidate>
+          <div class="field"><label for="n">Name</label><input id="n" name="name" required></div>
+          <div class="field"><label for="p">Phone / WhatsApp</label><input id="p" name="phone" type="tel" required></div>
+          <div class="field"><label for="t">Space type</label>
+            <select id="t" name="type">
+              <option>Residential — condominium</option>
+              <option>Residential — landed</option>
+              <option>Retail</option>
+              <option>Office / workspace</option>
+              <option>F&amp;B</option>
+            </select>
+          </div>
+          <div class="field"><label for="s">Approximate size (sq ft)</label><input id="s" name="size" inputmode="numeric"></div>
+          <div class="field"><label for="m">What are you trying to achieve?</label><textarea id="m" name="message"></textarea></div>
+          <button class="btn" type="submit">Send enquiry</button>
+          <p class="form-note">We reply within one working day</p>
+        </form>
+        <div id="ok" class="sent" style="display:none">Enquiry received. We'll be in touch within one working day.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">Maximize Creative</p>
+        <p style="margin-top:16px;max-width:34ch">Interior design and build. Kuala Lumpur, Selangor, and selected projects nationwide.</p>
+      </div>
+      <div><h5>Studio</h5><a href="#work">Selected work</a><a href="#archive">Project archive</a><a href="#capabilities">Capabilities</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+      <div><h5>Elsewhere</h5><a href="https://wa.me/601117673110">WhatsApp</a><a href="tel:+601117673110">011-1767 3110</a></div>
+    </div>
+    <div class="foot-bot"><span>© 2026 Maximize Creative</span><span>Kuala Lumpur, Malaysia</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/601117673110" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg>
+</a>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>10),{passive:true});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});
+
+/* ---------- PROJECT ARCHIVE ----------
+   EDIT HERE: swap this generator for your real list when you have one.
+   Row format: [number, "Type, Area", "Area", "0,000 sq ft", year] */
+const TYPES=['Condominium','Landed home','Retail','Office','Duplex','F&B','Showroom','Serviced suite','Clinic','Cafe'];
+const AREAS=['Mont Kiara','Bangsar','Damansara Heights','TTDI','Sri Hartamas','Puchong','Cyberjaya','Setia Alam','Ampang','KLCC','Subang Jaya','Petaling Jaya','Shah Alam','Cheras','Kajang','Seputeh','Bukit Jalil','Desa ParkCity','Kota Damansara','Sunway'];
+const rows=[];
+for(let i=74;i>0;i--){
+  const t=TYPES[(i*7)%TYPES.length], a=AREAS[(i*13)%AREAS.length];
+  const y=Math.min(2018+Math.floor((74-i)/9),2026);
+  const sf=(((i*137)%52)+9)*100;
+  rows.push([String(i).padStart(4,'0'),t+', '+a,a,sf.toLocaleString()+' sq ft',y]);
+}
+const html=rows.map(r=>'<div class="row"><span class="no">'+r[0]+'</span><span class="nm">'+r[1]+'</span><span class="loc">'+r[2]+'</span><span class="sf">'+r[3]+'</span><span class="yr">'+r[4]+'</span></div>').join('');
+const track=document.getElementById('track');
+track.innerHTML=html+html;
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches) track.classList.add('run');
+
+/* ---------- FORM ----------
+   TEMPORARY: opens the visitor's email app pre-filled to your inbox.
+   Works from day one. Swap for Supabase/Formspree later. */
+document.getElementById('enq').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target;
+  if(!f.name.value.trim()||!f.phone.value.trim()){(!f.name.value.trim()?f.name:f.phone).focus();return}
+  var body=
+    'Name: '+f.name.value+'\n'+
+    'Phone / WhatsApp: '+f.phone.value+'\n'+
+    'Space type: '+f.type.value+'\n'+
+    'Approx size: '+(f.size.value||'-')+' sq ft\n\n'+
+    'Brief:\n'+(f.message.value||'-');
+  window.location.href='mailto:maximizecreativemy@gmail.com'+
+    '?subject='+encodeURIComponent('Website enquiry — '+f.name.value)+
+    '&body='+encodeURIComponent(body);
+  f.style.display='none';
+  document.getElementById('ok').style.display='block';
+});
+</script>
+</body>
+</html>
