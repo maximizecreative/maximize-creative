@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.maximize-creative.com" }],
+      "destination": "https://maximize-creative.com/:path*",
+      "permanent": true
+    }
+  ]
+}
